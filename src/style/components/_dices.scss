@@ -1,0 +1,37 @@
+.dices {
+    display: flex;
+    margin: 8px;
+    border: 1px solid black;
+}
+
+.dice {
+    height: 64px;
+    width: 65px;
+    margin: 8px;
+    padding: 8px;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.dice-orange {
+    background-color: $color-orange;
+    color: $color-bg;
+}
+
+.dice-jaune {
+    background-color: $color-jaune;
+    color: $color-dark;
+}
+
+.dice-violet {
+    background-color: $color-violet;
+    color: $color-bg;
+}
+
+.dice-sum {
+    background-color: $color-dark;
+    color: $color-bg;
+}

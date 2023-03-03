@@ -1,0 +1,13 @@
+.line-rates {
+    display: grid;
+    grid-template-columns: repeat(4, 48px);
+    grid-template-rows: 48px;
+    grid-gap: 8px;
+    margin: 0px 0px 32px;
+}
+
+.case-ratee {
+    border: 1px solid $color-dark;
+    border-radius: 8px;
+    cursor: pointer;
+}

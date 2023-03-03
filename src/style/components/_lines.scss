@@ -1,0 +1,55 @@
+.line {
+    display: grid;
+    grid-template-columns: repeat(12, 60px);
+    grid-template-rows: 60px;
+    // grid-template-areas: ". . rond losange rond . rond losange rond rond rond rond";
+    margin: 8px;
+}
+
+.line {
+    .case-pleine {
+        padding: 4px;
+    }
+}
+
+.case-cocher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.case-rond {
+    height: 100%;
+    width: 100%;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: $color-carte;
+    cursor: pointer;
+}
+
+.case-losange {
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
+    background-color: $color-bg;
+    cursor: pointer;
+}
+
+.line-orange {
+    .case-pleine {
+        background-color: $color-orange;
+    }
+}
+
+.line-yellow {
+    .case-pleine {
+        background-color: $color-jaune;
+    }
+}
+
+.line-violet {
+    .case-pleine {
+        background-color: $color-violet;
+    }
+}
