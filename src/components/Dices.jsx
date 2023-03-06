@@ -4,7 +4,11 @@ const Dices = ({
     diceJaune,
     diceViolet,
     diceResult,
+    resetDice
 }) => {
+
+
+
     return (
         <div className="dices">
             <div
@@ -33,6 +37,7 @@ const Dices = ({
             </div>
             <div className="dice">=</div>
             <div className="dice dice-sum">{diceResult > 0 && diceResult}</div>
+            <div className="btn-submit" onClick={()=>resetDice()}>VALIDER</div>
         </div>
     );
 };

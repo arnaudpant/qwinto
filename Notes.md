@@ -1,24 +1,27 @@
 # Phases de jeu
 
 ## Lancement du jeux
+=> Page accueil
 - Combien de joueurs ?
 - Nom des joueurs
-- Quel joueur commence ? ou choix au hazard
-- Affichage de la grille de jeux
+=> Joueurs dans context
+- Affichage de la grille de jeux (nouvelle page)
+- Joueur 1 commence
 
 ## Autre joueur joue
 - Valeur des ses dés ?
 - Couleurs de ses dés ?
 - Placement de la valeur sur la grille
-- Tests si possible
+- Tests
 - Validation de la case remplie
+- Copie dans localHost des valeurs de dés joués
 - Joueur suivant
 
 ## Joueur joue
 - Choix du nombre de dés
-- Choix de la couleur des dés
+- Clics sur dés choisis
 - Placement de la valeur sur la grille
-- Tests si possible
+- Tests
 - Validation de la case remplie
 - Joueur suivant
 

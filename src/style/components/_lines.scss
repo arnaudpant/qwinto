@@ -1,8 +1,31 @@
+.list-players-game {
+    display: flex;
+    height: 48px;
+    width: 100%;
+
+    .player{
+        min-width: 100px;
+        margin: 8px; 
+        padding: 4px 16px;
+        text-align: center;
+        border-radius: 999px;
+        background-color: $color-carte;
+        box-shadow: $shadow;
+
+        &.player-me {
+            svg {
+                height: 24px;
+                width: 24px;
+                fill: $color-dark;
+            }
+        }
+    }
+}
+
 .line {
     display: grid;
     grid-template-columns: repeat(12, 60px);
     grid-template-rows: 60px;
-    // grid-template-areas: ". . rond losange rond . rond losange rond rond rond rond";
     margin: 8px;
 }
 
@@ -32,7 +55,7 @@
     height: 100%;
     width: 100%;
     clip-path: polygon(50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
-    background-color: $color-bg;
+    background-color: $color-carte;
     cursor: pointer;
 }
 
@@ -52,4 +75,25 @@
     .case-pleine {
         background-color: $color-violet;
     }
+}
+
+.hystorique {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 48px;
+    width: 100%;
+    padding: 8px;
+    margin: 8px;
+}
+
+.list-hystorique {
+    height: 24px;
+    width: 24px;
+    margin: 2px;
+    background-color: $color-dark;
+    border-radius: 4px;
+    color: $color-carte;
+    text-align: center;
+    line-height: 24px;
 }

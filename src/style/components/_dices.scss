@@ -18,7 +18,7 @@
 
 .dice-orange {
     background-color: $color-orange;
-    color: $color-bg;
+    color: $color-carte;
 }
 
 .dice-jaune {
@@ -28,10 +28,23 @@
 
 .dice-violet {
     background-color: $color-violet;
-    color: $color-bg;
+    color: $color-carte;
 }
 
 .dice-sum {
     background-color: $color-dark;
-    color: $color-bg;
+    color: $color-carte;
+}
+
+.btn-submit {
+    height: 48px;
+    width: 80px;
+    margin: 16px;
+    background-color: $color-bg;
+    color: $color-carte;
+    text-align: center;
+    line-height: 48px;
+    border-radius: 8px;
+    box-shadow: $shadow;
+    cursor: pointer;
 }

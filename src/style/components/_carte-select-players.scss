@@ -1,0 +1,82 @@
+.carte-select-players {
+    background-color: $color-carte;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: $shadow;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    label, input {
+        margin: 8px;
+    }
+
+    input {
+        font-size: 20px;
+        padding: 4px;
+
+        &:last-child{
+            margin-bottom: 32px;
+        }
+    }
+
+    button {
+        height: 48px;
+        //width: 120px;
+        margin: 16px 8px;
+        padding: 0 20px;
+        border: none;
+        background-color: $color-bada;
+        border-radius: 999px;
+        box-shadow: $shadow;
+        font-size: 16px;
+        line-height: 48px;
+        transition: 0.3s ease-out;
+        
+        
+        &.launch-game {
+            background-color: $color-orange;
+            cursor: pointer;
+            
+            &:hover {
+                scale: 1.1;
+            }
+        }
+    }
+
+.players-select-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 24px 8px;
+}
+
+.player-select {
+    background-color: $color-bada;
+    border-radius: 999px;
+    margin: 16px;
+    min-width: 200px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: $shadow;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+    &:hover {
+        scale: 1.1;
+    }
+    &.selected {
+        background-color: $color-orange;
+        &:hover {
+            scale: 1;
+        }
+    }
+}
+
+}
