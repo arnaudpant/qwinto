@@ -1,3 +1,4 @@
+import { useGlobalContext } from "../Context";
 import { useEffect, useState } from "react";
 import Dices from "../components/Dices";
 import LineCoupsManques from "../components/LineCoupsManques";
@@ -6,11 +7,15 @@ import LineOrange from "../components/LineOrange";
 import LineViolet from "../components/LineViolet";
 import LineYellow from "../components/LineYellow";
 import ListPlayers from "../components/ListPlayers";
+import DicesOtherPlayers from "../components/DicesOtherPlayers";
 
 function Game() {
-    const [casesOrange, setCasesOrange] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
-    const [casesJaune, setCasesJaune] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
-    const [casesViolet, setCasesViolet] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    // Context
+    const { playerIndexName, playerToPlay, setPlayerToPlay, players } = useGlobalContext();
+
+    // const [casesOrange, setCasesOrange] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    // const [casesJaune, setCasesJaune] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+    // const [casesViolet, setCasesViolet] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
     // DICES
     const [diceOrange, setDiceOrange] = useState(0);
@@ -20,10 +25,8 @@ function Game() {
     const [dicesColor, setDicesColor] = useState([]);
     const [dicesHystorique, setDicesHystorique] = useState([]);
 
-    // PLAYERS
-
-
     useEffect(() => {
+        // Joueur physique lance les dés
         setDiceResult(
             Number(diceOrange) + Number(diceJaune) + Number(diceViolet)
         );
@@ -43,6 +46,10 @@ function Game() {
         setDiceOrange(0);
         setDiceJaune(0);
         setDiceViolet(0);
+        setPlayerToPlay(playerToPlay + 1);
+        playerToPlay === players.length - 1 && setPlayerToPlay(0);
+        setDicesColor([]);
+        setDiceResult("");
     };
 
     return (
@@ -50,14 +57,23 @@ function Game() {
             <ListPlayers />
             <div className="carte-jeux">
                 <h1>QWINTO</h1>
-                <Dices
-                    launchDice={launchDice}
-                    diceOrange={diceOrange}
-                    diceJaune={diceJaune}
-                    diceViolet={diceViolet}
-                    diceResult={diceResult}
-                    resetDice={resetDice}
-                />
+                {playerIndexName === playerToPlay ? (
+                    <Dices
+                        launchDice={launchDice}
+                        diceOrange={diceOrange}
+                        diceJaune={diceJaune}
+                        diceViolet={diceViolet}
+                        diceResult={diceResult}
+                        resetDice={resetDice}
+                    />
+                ) : (
+                    <DicesOtherPlayers
+                        setDicesColor={setDicesColor}
+                        dicesColor={dicesColor}
+                        setDiceResult={setDiceResult}
+                        resetDice={resetDice}
+                    />
+                )}
                 <LineOrange diceResult={diceResult} dicesColor={dicesColor} />
                 <LineYellow diceResult={diceResult} dicesColor={dicesColor} />
                 <LineViolet diceResult={diceResult} dicesColor={dicesColor} />

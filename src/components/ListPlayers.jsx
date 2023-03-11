@@ -3,22 +3,21 @@ import { useGlobalContext } from "../Context";
 import { GiAmericanFootballPlayer, GiPlayerTime } from "react-icons/gi";
 
 const ListPlayers = () => {
-    const { players, playerIndexName } = useGlobalContext();
+    const { players, playerToPlay } = useGlobalContext();
 
     return (
         <div className="list-players-game">
             {players.map((player, index) => {
-                console.log(index);
-                if (index == playerIndexName) {
+                if (playerToPlay == index) {
                     return (
                         <div className="player player-me" key={index}>
-                            <GiAmericanFootballPlayer />
+                            <GiAmericanFootballPlayer /> {player}
                         </div>
                     );
                 } else {
                     return (
                         <div className="player" key={index}>
-                            {player}
+                            <GiPlayerTime /> {player}
                         </div>
                     );
                 }

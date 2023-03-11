@@ -36,15 +36,38 @@
     color: $color-carte;
 }
 
-.btn-submit {
+.btn {
+    display: flex;
+}
+
+.btn-submit, .btn-reset {
     height: 48px;
     width: 80px;
     margin: 16px;
-    background-color: $color-bg;
-    color: $color-carte;
     text-align: center;
     line-height: 48px;
     border-radius: 8px;
     box-shadow: $shadow;
+    cursor: pointer;
+}
+
+.btn-submit{
+    background-color: $color-bada;
+    color: $color-dark;
+}
+
+.btn-reset {
+    background-color: $color-bg;
+    color: $color-carte;
+}
+
+
+.list-values-dices {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.mini-dice {
     cursor: pointer;
 }

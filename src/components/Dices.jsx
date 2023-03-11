@@ -1,3 +1,5 @@
+
+
 const Dices = ({
     launchDice,
     diceOrange,
@@ -6,8 +8,6 @@ const Dices = ({
     diceResult,
     resetDice
 }) => {
-
-
 
     return (
         <div className="dices">

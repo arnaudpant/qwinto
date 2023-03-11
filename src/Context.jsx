@@ -1,13 +1,10 @@
-import React, { useContext, createContext, useEffect, useState } from "react";
+import React, { useContext, createContext, useState } from "react";
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
     const [players, setPlayers] = useState([]);
     const [playerIndexName, setPlayerIndexName] = useState();
-
-    // useEffect ( () => {
-    //     console.log(players);
-    // }, [players])
+    const [playerToPlay, setPlayerToPlay] = useState(0);
 
     return (
         <AppContext.Provider
@@ -16,6 +13,8 @@ const AppProvider = ({ children }) => {
                 players,
                 setPlayerIndexName,
                 playerIndexName,
+                playerToPlay,
+                setPlayerToPlay
             }}
         >
             {children}
