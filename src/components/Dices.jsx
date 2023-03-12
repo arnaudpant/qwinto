@@ -9,6 +9,10 @@ const Dices = ({
     resetDice
 }) => {
 
+    const selectDices = () => {
+
+    }
+
     return (
         <div className="dices">
             <div
