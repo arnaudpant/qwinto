@@ -1,48 +1,83 @@
-
-
 const Dices = ({
-    launchDice,
-    diceOrange,
+    setDicesColor,
+    dicesColor,
     diceJaune,
+    diceOrange,
     diceViolet,
+    launchDice,
     diceResult,
-    resetDice
 }) => {
-
-    const selectDices = () => {
-
-    }
-
     return (
-        <div className="dices">
-            <div
-                className="dice dice-orange"
-                onClick={() => {
-                    diceOrange === 0 && 
-                    launchDice("orange")}}
-            >
-                {diceOrange > 0 && diceOrange}
+        <>
+            <p>Selectionner le ou les dés à lancer</p>
+            <div className="dices">
+                <div
+                    className="dice dice-orange"
+                    onClick={() => {
+                        dicesColor.includes("orange") ? setDicesColor([]) :
+                        setDicesColor([...dicesColor, "orange"]);
+                    }}
+                >
+                    {dicesColor.includes("orange") ? (
+                        diceOrange === 0 ? (
+                            "X"
+                        ) : (
+                            <>{diceOrange}</>
+                        )
+                    ) : (
+                        ""
+                    )}
+                </div>
+                <div
+                    className="dice dice-jaune"
+                    onClick={() => {
+                        dicesColor.includes("jaune") ? setDicesColor([]) :
+                        setDicesColor([...dicesColor, "jaune"]);
+                    }}
+                >
+                    {dicesColor.includes("jaune") ? (
+                        diceJaune === 0 ? (
+                            "X"
+                        ) : (
+                            <>{diceJaune}</>
+                        )
+                    ) : (
+                        ""
+                    )}
+                </div>
+                <div
+                    className="dice dice-violet"
+                    onClick={() => {
+                        dicesColor.includes("violet") ? setDicesColor([]) :
+                        setDicesColor([...dicesColor, "violet"]);
+                    }}
+                >
+                    {dicesColor.includes("violet") ? (
+                        diceViolet === 0 ? (
+                            "X"
+                        ) : (
+                            <>{diceViolet}</>
+                        )
+                    ) : (
+                        ""
+                    )}
+                </div>
+                <div className="dice">=</div>
+                <div className="dice dice-sum">
+                    {diceResult > 0 && diceResult}
+                </div>
+                {diceResult === 0 && (
+                    <div
+                        className="btn-submit"
+                        onClick={() => {
+                            launchDice();
+                        }}
+                    >
+                        LANCER
+                    </div>
+                )}
             </div>
-            <div
-                className="dice dice-jaune"
-                onClick={() => {
-                    diceJaune === 0 &&
-                    launchDice("jaune")}}
-            >
-                {diceJaune > 0 && diceJaune}
-            </div>
-            <div
-                className="dice dice-violet"
-                onClick={() => {
-                    diceViolet === 0 &&
-                    launchDice("violet")}}
-            >
-                {diceViolet > 0 && diceViolet}
-            </div>
-            <div className="dice">=</div>
-            <div className="dice dice-sum">{diceResult > 0 && diceResult}</div>
-            <div className="btn-submit" onClick={()=>resetDice()}>VALIDER</div>
-        </div>
+        </>
     );
 };
 

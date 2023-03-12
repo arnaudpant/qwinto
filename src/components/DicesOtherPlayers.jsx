@@ -4,7 +4,7 @@ const DicesOtherPlayers = ({
     setDicesColor,
     dicesColor,
     setDiceResult,
-    resetDice,
+    diceResult
 }) => {
     const arrayDice = [
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
@@ -38,6 +38,20 @@ const DicesOtherPlayers = ({
                 >
                     {dicesColor.includes("violet") && "X"}
                 </div>
+                <div className="dice dice-sum">
+                    {diceResult > 0 && diceResult}
+                </div>
+                <div className="btn">
+                <div
+                    className="btn-reset"
+                    onClick={() => {
+                        setDicesColor([]);
+                        setDiceResult(0)
+                    }}
+                >
+                    RESET
+                </div>
+            </div>
             </div>
             <p>CLiquer sur la valeur des dés</p>
             <div className="list-values-dices">
@@ -50,24 +64,6 @@ const DicesOtherPlayers = ({
                         {dice}
                     </div>
                 ))}
-            </div>
-            <div className="btn">
-                <div
-                    className="btn-submit"
-                    onClick={() => {
-                        resetDice();
-                    }}
-                >
-                    VALIDER
-                </div>
-                <div
-                    className="btn-reset"
-                    onClick={() => {
-                        setDicesColor([]);
-                    }}
-                >
-                    RESET
-                </div>
             </div>
         </>
     );

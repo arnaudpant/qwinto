@@ -11,7 +11,8 @@ import DicesOtherPlayers from "../components/DicesOtherPlayers";
 
 function Game() {
     // Context
-    const { playerIndexName, playerToPlay, setPlayerToPlay, players } = useGlobalContext();
+    const { playerIndexName, playerToPlay, setPlayerToPlay, players } =
+        useGlobalContext();
 
     // const [casesOrange, setCasesOrange] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
     // const [casesJaune, setCasesJaune] = useState([0, 0, 0, 0, 0, 0, 0, 0, 0]);
@@ -32,13 +33,10 @@ function Game() {
         );
     }, [diceOrange, diceJaune, diceViolet]);
 
-    const launchDice = (colorDice) => {
-        setDicesColor([...dicesColor, colorDice]);
-        colorDice === "orange"
-            ? setDiceOrange(Math.floor(Math.random() * 6 + 1))
-            : colorDice === "jaune"
-            ? setDiceJaune(Math.floor(Math.random() * 6 + 1))
-            : setDiceViolet(Math.floor(Math.random() * 6 + 1));
+    const launchDice = () => {
+        dicesColor.includes("orange") && setDiceOrange(Math.floor(Math.random() * 6 + 1))
+        dicesColor.includes("jaune") && setDiceJaune(Math.floor(Math.random() * 6 + 1))
+        dicesColor.includes("violet") && setDiceViolet(Math.floor(Math.random() * 6 + 1));
     };
 
     const resetDice = () => {
@@ -49,7 +47,7 @@ function Game() {
         setPlayerToPlay(playerToPlay + 1);
         playerToPlay === players.length - 1 && setPlayerToPlay(0);
         setDicesColor([]);
-        setDiceResult("");
+        setDiceResult(0);
     };
 
     return (
@@ -59,10 +57,12 @@ function Game() {
                 <h1>QWINTO</h1>
                 {playerIndexName === playerToPlay ? (
                     <Dices
-                        launchDice={launchDice}
+                        setDicesColor={setDicesColor}
+                        dicesColor={dicesColor}
                         diceOrange={diceOrange}
                         diceJaune={diceJaune}
                         diceViolet={diceViolet}
+                        launchDice={launchDice}
                         diceResult={diceResult}
                         resetDice={resetDice}
                     />
@@ -71,12 +71,22 @@ function Game() {
                         setDicesColor={setDicesColor}
                         dicesColor={dicesColor}
                         setDiceResult={setDiceResult}
-                        resetDice={resetDice}
+                        diceResult={diceResult}
                     />
                 )}
                 <LineOrange diceResult={diceResult} dicesColor={dicesColor} />
                 <LineYellow diceResult={diceResult} dicesColor={dicesColor} />
                 <LineViolet diceResult={diceResult} dicesColor={dicesColor} />
+                {diceResult > 0 && (
+                    <div
+                        className="btn-submit"
+                        onClick={() => {
+                            resetDice();
+                        }}
+                    >
+                        VALIDER
+                    </div>
+                )}
                 <LineCoupsManques />
                 <LineHystorique dicesHystorique={dicesHystorique} />
             </div>
