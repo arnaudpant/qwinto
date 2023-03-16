@@ -3,11 +3,15 @@ import { NavLink } from "react-router-dom";
 import { useGlobalContext } from "../Context";
 
 const SelectPlayers = () => {
+    // CONTEXT
     const { setPlayers, players, setPlayerIndexName, playerIndexName } =
         useGlobalContext();
 
+    // -- PARTIE 1 --- ENTRER NOMS DES JOUEURS
+    // USEREF
     const formPlayers = useRef();
 
+    // AJOUT DES JOUEURS DANS UN ARRAY
     const handleSubmit = (e) => {
         e.preventDefault();
         let arrayPlayers = [];
@@ -26,7 +30,11 @@ const SelectPlayers = () => {
         if (formPlayers.current.player6.value != "") {
             arrayPlayers.push(formPlayers.current.player6.value);
         }
+
+        // AJOUT DES JOUEURS DANS USESTATE
         setPlayers(arrayPlayers);
+
+        // RAZ DES INPUT NAMES
         formPlayers.current.player1.value = "";
         formPlayers.current.player2.value = "";
         formPlayers.current.player3.value = "";
@@ -35,6 +43,7 @@ const SelectPlayers = () => {
         formPlayers.current.player6.value = "";
     };
 
+    // -- PARTIE  --- ENTRER INDEX JOUEUR
     const handleSelect = (index) => {
         setPlayerIndexName(index);
     };
@@ -96,18 +105,20 @@ const SelectPlayers = () => {
                         </div>
                         <div
                             className="player-select"
-                            onClick={(e) => 
-                                {e.target.classList.add("selected");
-                                handleSelect(1)}}
+                            onClick={(e) => {
+                                e.target.classList.add("selected");
+                                handleSelect(1);
+                            }}
                         >
                             {players[1]}
                         </div>
                         {players[2] && (
                             <div
                                 className="player-select"
-                                onClick={(e) => 
-                                    {e.target.classList.add("selected");
-                                    handleSelect(2)}}
+                                onClick={(e) => {
+                                    e.target.classList.add("selected");
+                                    handleSelect(2);
+                                }}
                             >
                                 {players[2]}
                             </div>
@@ -115,19 +126,21 @@ const SelectPlayers = () => {
                         {players[3] && (
                             <div
                                 className="player-select"
-                                onClick={(e) => 
-                                    {e.target.classList.add("selected");
-                                    handleSelect(3)}}
-                            >e
-                                {players[3]}
+                                onClick={(e) => {
+                                    e.target.classList.add("selected");
+                                    handleSelect(3);
+                                }}
+                            >
+                                e{players[3]}
                             </div>
                         )}
                         {players[4] && (
                             <div
                                 className="player-select"
-                                onClick={(e) => 
-                                    {e.target.classList.add("selected");
-                                    handleSelect(4)}}
+                                onClick={(e) => {
+                                    e.target.classList.add("selected");
+                                    handleSelect(4);
+                                }}
                             >
                                 {players[4]}
                             </div>
@@ -135,9 +148,10 @@ const SelectPlayers = () => {
                         {players[5] && (
                             <div
                                 className="player-select"
-                                onClick={(e) => 
-                                    {e.target.classList.add("selected");
-                                    handleSelect(5)}}
+                                onClick={(e) => {
+                                    e.target.classList.add("selected");
+                                    handleSelect(5);
+                                }}
                             >
                                 {players[5]}
                             </div>
@@ -148,10 +162,11 @@ const SelectPlayers = () => {
                                     LANCEZ LA PARTIE
                                 </button>
                             </NavLink>
-
-                        ) : (<button type="submit" className="no-launch-game">
-                        CLIC SUR TON NOM
-                    </button>)}
+                        ) : (
+                            <button type="submit" className="no-launch-game">
+                                CLIC SUR TON NOM
+                            </button>
+                        )}
                     </div>
                 </>
             )}

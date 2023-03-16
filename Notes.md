@@ -1,29 +1,28 @@
 # Phases de jeu
+- Entrer noms des joueurs
+- Entrer qui on est (quel index dans le tableau)
 
-## Lancement du jeux
-=> Page accueil
-- Combien de joueurs ?
-- Nom des joueurs
-=> Joueurs dans context
-- Affichage de la grille de jeux (nouvelle page)
-- Joueur 1 commence
+## Page Préparation
+### Entrer noms des joueurs
+Formulaire de 6 joueurs avec 2 joueurs minimum
+Envoi dans Context:
+    - Noms des joueurs (players)
+Validation => Dire qui on est
+### Dire qui on est
+Cliquer sur votre nom pour valider votre position dans le jeu
+Envoi dans Context:
+    - Index du joueur (playerIndexName)
+Validation => Page table de jeux
 
-## Autre joueur joue
-- Valeur des ses dés ?
-- Couleurs de ses dés ?
-- Placement de la valeur sur la grille
-- Tests
-- Validation de la case remplie
-- Copie dans localHost des valeurs de dés joués
-- Joueur suivant
+## Page Jeu
 
-## Joueur joue
-- Choix du nombre de dés
-- Clics sur dés choisis
-- Placement de la valeur sur la grille
-- Tests
-- Validation de la case remplie
-- Joueur suivant
+### List des joueurs
+Les noms des joueurs apparaissent en haut
+Celui qui lance les dés est en vert avec une icone differente
 
-# En parallèle
-- Comptage des points
+2 posibilités:
+- Un autre joueur lance les dés
+- Le joueur lance les dés
+
+### Autre joueur lance les dés
+

@@ -1,12 +1,14 @@
 import React from "react";
 
-const LineYellow = ({ diceResult,dicesColor }) => {
+const LineYellow = ({ diceResult,dicesColor, indexCase, testDiceValue }) => {
 
-    const testColorDice = () => {
-        if (dicesColor.includes('jaune') === true) {
-            return true
-        } else {return false}
-    }
+    const testDice = () => {
+        if (dicesColor.includes("jaune") === true || indexCase[0] !== 0) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
     return (
         <div className="line line-yellow">
@@ -16,9 +18,10 @@ const LineYellow = ({ diceResult,dicesColor }) => {
             <div className="case-pleine">
                 <div
                     className="case-cocher case-rond"
-                    id="4"
+                    id="2"
                     onClick={(e) => {
-                        testColorDice() &&
+                        testDiceValue(1, "jaune") &&
+                        testDice() &&
                         e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -29,9 +32,10 @@ const LineYellow = ({ diceResult,dicesColor }) => {
             <div className="case-pleine">
                 <div
                     className="case-cocher case-rond"
-                    id="4"
+                    id="3"
                     onClick={(e) => {
-                        testColorDice() &&
+                        testDiceValue(2, "jaune") &&
+                        testDice() &&
                         e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -44,7 +48,8 @@ const LineYellow = ({ diceResult,dicesColor }) => {
                     className="case-cocher case-rond"
                     id="4"
                     onClick={(e) => {
-                        testColorDice() &&
+                        testDiceValue(3, "jaune") &&
+                        testDice() &&
                         e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -55,9 +60,10 @@ const LineYellow = ({ diceResult,dicesColor }) => {
             <div className="case-pleine">
                 <div
                     className="case-cocher case-rond"
-                    id="4"
+                    id="5"
                     onClick={(e) => {
-                        testColorDice() &&
+                        testDiceValue(4, "jaune") &&
+                        testDice() &&
                         e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -68,9 +74,10 @@ const LineYellow = ({ diceResult,dicesColor }) => {
             <div className="case-pleine">
                 <div
                     className="case-cocher case-rond"
-                    id="4"
+                    id="6"
                     onClick={(e) => {
-                        testColorDice() &&
+                        testDiceValue(5, "jaune") &&
+                        testDice() &&
                         e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -83,9 +90,10 @@ const LineYellow = ({ diceResult,dicesColor }) => {
             <div className="case-pleine">
                 <div
                     className="case-cocher case-rond"
-                    id="4"
+                    id="8"
                     onClick={(e) => {
-                        testColorDice() &&
+                        testDiceValue(7, "jaune") &&
+                        testDice() &&
                         e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -96,9 +104,10 @@ const LineYellow = ({ diceResult,dicesColor }) => {
             <div className="case-pleine">
                 <div
                     className="case-cocher case-losange"
-                    id="4"
+                    id="9"
                     onClick={(e) => {
-                        testColorDice() &&
+                        testDiceValue(8, "jaune") &&
+                        testDice() &&
                         e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -109,9 +118,10 @@ const LineYellow = ({ diceResult,dicesColor }) => {
             <div className="case-pleine">
                 <div
                     className="case-cocher case-rond"
-                    id="4"
+                    id="10"
                     onClick={(e) => {
-                        testColorDice() &&
+                        testDiceValue(9, "jaune") &&
+                        testDice() &&
                         e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -122,9 +132,10 @@ const LineYellow = ({ diceResult,dicesColor }) => {
             <div className="case-pleine">
                 <div
                     className="case-cocher case-rond"
-                    id="4"
+                    id="11"
                     onClick={(e) => {
-                        testColorDice() &&
+                        testDiceValue(10, "jaune") &&
+                        testDice() &&
                         e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");

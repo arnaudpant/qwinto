@@ -80,7 +80,7 @@
     }
 }
 
-.hystorique {
+.hystorique, .last-result {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -99,4 +99,23 @@
     color: $color-carte;
     text-align: center;
     line-height: 24px;
+}
+
+.last-dice {
+    height: 24px;
+    width: 24px;
+    margin: 2px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 24px;
+}
+
+.last-dice-orange{
+    background-color: $color-orange;
+}
+.last-dice-jaune {
+    background-color: $color-jaune;
+}
+.last-dice-violet {
+    background-color: $color-violet;
 }

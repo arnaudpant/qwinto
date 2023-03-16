@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SelectPlayers from "./components/SelectPlayers";
+import SelectPlayers from "./pages/SelectPlayers";
 import Game from "./pages/Game";
 import "./style/style.scss";
 
