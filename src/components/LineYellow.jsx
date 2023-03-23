@@ -1,9 +1,8 @@
 import React from "react";
 
-const LineYellow = ({ diceResult,dicesColor, indexCase, testDiceValue }) => {
-
+const LineYellow = ({ diceResult, dicesColor }) => {
     const testDice = () => {
-        if (dicesColor.includes("jaune") === true || indexCase[0] !== 0) {
+        if (dicesColor.includes("jaune") === true) {
             return true;
         } else {
             return false;
@@ -20,9 +19,7 @@ const LineYellow = ({ diceResult,dicesColor, indexCase, testDiceValue }) => {
                     className="case-cocher case-rond"
                     id="2"
                     onClick={(e) => {
-                        testDiceValue(1, "jaune") &&
-                        testDice() &&
-                        e.target.innerText === ""
+                        testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
                     }}
@@ -34,9 +31,7 @@ const LineYellow = ({ diceResult,dicesColor, indexCase, testDiceValue }) => {
                     className="case-cocher case-rond"
                     id="3"
                     onClick={(e) => {
-                        testDiceValue(2, "jaune") &&
-                        testDice() &&
-                        e.target.innerText === ""
+                        testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
                     }}
@@ -48,9 +43,7 @@ const LineYellow = ({ diceResult,dicesColor, indexCase, testDiceValue }) => {
                     className="case-cocher case-rond"
                     id="4"
                     onClick={(e) => {
-                        testDiceValue(3, "jaune") &&
-                        testDice() &&
-                        e.target.innerText === ""
+                        testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
                     }}
@@ -62,9 +55,7 @@ const LineYellow = ({ diceResult,dicesColor, indexCase, testDiceValue }) => {
                     className="case-cocher case-rond"
                     id="5"
                     onClick={(e) => {
-                        testDiceValue(4, "jaune") &&
-                        testDice() &&
-                        e.target.innerText === ""
+                        testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
                     }}
@@ -76,9 +67,7 @@ const LineYellow = ({ diceResult,dicesColor, indexCase, testDiceValue }) => {
                     className="case-cocher case-rond"
                     id="6"
                     onClick={(e) => {
-                        testDiceValue(5, "jaune") &&
-                        testDice() &&
-                        e.target.innerText === ""
+                        testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
                     }}
@@ -92,9 +81,7 @@ const LineYellow = ({ diceResult,dicesColor, indexCase, testDiceValue }) => {
                     className="case-cocher case-rond"
                     id="8"
                     onClick={(e) => {
-                        testDiceValue(7, "jaune") &&
-                        testDice() &&
-                        e.target.innerText === ""
+                        testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
                     }}
@@ -106,9 +93,7 @@ const LineYellow = ({ diceResult,dicesColor, indexCase, testDiceValue }) => {
                     className="case-cocher case-losange"
                     id="9"
                     onClick={(e) => {
-                        testDiceValue(8, "jaune") &&
-                        testDice() &&
-                        e.target.innerText === ""
+                        testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
                     }}
@@ -120,9 +105,7 @@ const LineYellow = ({ diceResult,dicesColor, indexCase, testDiceValue }) => {
                     className="case-cocher case-rond"
                     id="10"
                     onClick={(e) => {
-                        testDiceValue(9, "jaune") &&
-                        testDice() &&
-                        e.target.innerText === ""
+                        testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
                     }}
@@ -134,9 +117,7 @@ const LineYellow = ({ diceResult,dicesColor, indexCase, testDiceValue }) => {
                     className="case-cocher case-rond"
                     id="11"
                     onClick={(e) => {
-                        testDiceValue(10, "jaune") &&
-                        testDice() &&
-                        e.target.innerText === ""
+                        testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
                     }}
@@ -144,7 +125,6 @@ const LineYellow = ({ diceResult,dicesColor, indexCase, testDiceValue }) => {
             </div>
             {/* 12 */}
             <div className="case-vide"></div>
-
         </div>
     );
 };

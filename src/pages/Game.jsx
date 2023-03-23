@@ -46,54 +46,8 @@ function Game() {
     }, [diceOrange, diceJaune, diceViolet]);
 
     // TEST DICE
-    const testDiceValue = (index, color) => {
-        let arrayColor = []
-        if(color === "orange"){
-            arrayColor = [...casesOrange]
-        } else if (color === "jaune") {
-            arrayColor = [...casesJaune]
-        }else{
-            arrayColor = [...casesViolet]
-        }
 
-        setIndexCase(index);
-        // TEST 1
-        for (let i = index + 1; i < arrayColor.length - (index - 1); i++) {
-            if (arrayColor[i] !== 0) {
-                if (diceResult >= arrayColor[i]) {
-                    alert("Valeur trop petite");
-                    return false;
-                }
-            }
-        }
-        // TEST 2
-        for (let y = index - 1; y <= 0; y--) {
-            if (arrayColor[y] !== 0) {
-                if (diceResult <= arrayColor[y]) {
-                    alert("Valeur trop grande");
-                    return false;
-                }
-            }
-        }
-        // TEST 3
-        if (
-            diceResult === casesJaune[index] ||
-            diceResult === casesViolet[index] ||
-            diceResult === casesOrange[index]
-        ) {
-            alert("Une seule valeur identique par colonne");
-            return false;
-        }
 
-        return true;
-    };
-
-    // VALID VALUE IN ARRAY
-    const validValueDices = () => {
-        let arrayTemp = [...casesOrange];
-        arrayTemp[indexCase] === 0 && (arrayTemp[indexCase] = diceResult);
-        setCasesOrange(arrayTemp);
-    };
 
     // LAUNCH DICE
     const launchDice = () => {
@@ -139,26 +93,19 @@ function Game() {
                 <LineOrange
                     diceResult={diceResult}
                     dicesColor={dicesColor}
-                    indexCase={indexCase}
-                    testDiceValue={testDiceValue}
                 />
                 <LineYellow
                     diceResult={diceResult}
                     dicesColor={dicesColor}
-                    indexCase={indexCase}
-                    testDiceValue={testDiceValue}
                 />
                 <LineViolet
                     diceResult={diceResult}
                     dicesColor={dicesColor}
-                    indexCase={indexCase}
-                    testDiceValue={testDiceValue}
                 />
                 {diceResult > 0 && (
                     <div
                         className="btn-submit"
                         onClick={() => {
-                            validValueDices();
                             memoLastLaunch(dicesColor);
                             resetDice();
                         }}
