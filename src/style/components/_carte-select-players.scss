@@ -11,7 +11,8 @@
         align-items: center;
     }
 
-    label, input {
+    label,
+    input {
         margin: 8px;
     }
 
@@ -19,7 +20,7 @@
         font-size: 20px;
         padding: 4px;
 
-        &:last-child{
+        &:last-child {
             margin-bottom: 32px;
         }
     }
@@ -36,47 +37,51 @@
         font-size: 16px;
         line-height: 48px;
         transition: 0.3s ease-out;
-        
-        
+
         &.launch-game {
             background-color: $color-orange;
             cursor: pointer;
-            
+
             &:hover {
                 scale: 1.1;
             }
         }
     }
 
-.players-select-name {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 24px 8px;
-}
-
-.player-select {
-    background-color: $color-bada;
-    border-radius: 999px;
-    margin: 16px;
-    min-width: 200px;
-    height: 48px;
-    line-height: 48px;
-    font-size: 20px;
-    text-align: center;
-    box-shadow: $shadow;
-    cursor: pointer;
-    transition: 0.3s ease-out;
-    &:hover {
-        scale: 1.1;
+    .players-select-name {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 24px 8px;
     }
-    &.selected {
-        background-color: $color-orange;
+
+    .player-select {
+        background-color: $color-bada;
+        border-radius: 999px;
+        margin: 16px;
+        min-width: 200px;
+        height: 48px;
+        line-height: 48px;
+        font-size: 20px;
+        text-align: center;
+        box-shadow: $shadow;
+        cursor: pointer;
+        transition: 0.3s ease-out;
         &:hover {
-            scale: 1;
+            scale: 1.1;
+        }
+        &.selected {
+            background-color: $color-orange;
+            &:hover {
+                scale: 1;
+            }
         }
     }
 }
 
+.copyright {
+    font-size: 0.6em;
+    text-align: center;
+    margin: 24px 0 8px;
 }

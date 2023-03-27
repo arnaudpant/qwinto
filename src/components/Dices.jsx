@@ -20,9 +20,9 @@ const Dices = ({
     return (
         <>
             {playerIndexName === playerToPlay ? (
-                <p>Selectionner le ou les dés à lancer</p>
+                <p>Selectionnez le ou les dés, puis lancez</p>
             ) : (
-                <p>Selectionner les couleurs des dés et leur somme</p>
+                <p>Selectionnez les couleurs des dés et leur somme</p>
             )}
 
             <div className="dices">

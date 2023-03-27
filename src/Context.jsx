@@ -5,6 +5,7 @@ const AppProvider = ({ children }) => {
     const [players, setPlayers] = useState([]);
     const [playerIndexName, setPlayerIndexName] = useState();
     const [playerToPlay, setPlayerToPlay] = useState(0);
+    const [coupsRates, setCoupsRates] = useState(0);
 
     return (
         <AppContext.Provider
@@ -14,7 +15,9 @@ const AppProvider = ({ children }) => {
                 setPlayerIndexName,
                 playerIndexName,
                 playerToPlay,
-                setPlayerToPlay
+                setPlayerToPlay,
+                coupsRates,
+                setCoupsRates
             }}
         >
             {children}

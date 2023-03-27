@@ -1,6 +1,6 @@
 import React from "react";
 
-const LineYellow = ({ diceResult, dicesColor }) => {
+const LineYellow = ({ diceResult, dicesColor, setIndexCaseColor }) => {
     const testDice = () => {
         if (dicesColor.includes("jaune") === true) {
             return true;
@@ -19,6 +19,7 @@ const LineYellow = ({ diceResult, dicesColor }) => {
                     className="case-cocher case-rond"
                     id="2"
                     onClick={(e) => {
+                        setIndexCaseColor([0, "jaune"]);
                         testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -31,6 +32,7 @@ const LineYellow = ({ diceResult, dicesColor }) => {
                     className="case-cocher case-rond"
                     id="3"
                     onClick={(e) => {
+                        setIndexCaseColor([1, "jaune"]);
                         testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -43,6 +45,7 @@ const LineYellow = ({ diceResult, dicesColor }) => {
                     className="case-cocher case-rond"
                     id="4"
                     onClick={(e) => {
+                        setIndexCaseColor([2, "jaune"]);
                         testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -55,6 +58,7 @@ const LineYellow = ({ diceResult, dicesColor }) => {
                     className="case-cocher case-rond"
                     id="5"
                     onClick={(e) => {
+                        setIndexCaseColor([3, "jaune"]);
                         testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -67,6 +71,7 @@ const LineYellow = ({ diceResult, dicesColor }) => {
                     className="case-cocher case-rond"
                     id="6"
                     onClick={(e) => {
+                        setIndexCaseColor([4, "jaune"]);
                         testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -81,6 +86,7 @@ const LineYellow = ({ diceResult, dicesColor }) => {
                     className="case-cocher case-rond"
                     id="8"
                     onClick={(e) => {
+                        setIndexCaseColor([5, "jaune"]);
                         testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -93,6 +99,7 @@ const LineYellow = ({ diceResult, dicesColor }) => {
                     className="case-cocher case-losange"
                     id="9"
                     onClick={(e) => {
+                        setIndexCaseColor([6, "jaune"]);
                         testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -105,6 +112,7 @@ const LineYellow = ({ diceResult, dicesColor }) => {
                     className="case-cocher case-rond"
                     id="10"
                     onClick={(e) => {
+                        setIndexCaseColor([7, "jaune"]);
                         testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");
@@ -117,6 +125,7 @@ const LineYellow = ({ diceResult, dicesColor }) => {
                     className="case-cocher case-rond"
                     id="11"
                     onClick={(e) => {
+                        setIndexCaseColor([8, "jaune"]);
                         testDice() && e.target.innerText === ""
                             ? (e.target.innerText = diceResult)
                             : (e.target.innerText = "");

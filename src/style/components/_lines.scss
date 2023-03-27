@@ -38,7 +38,7 @@
     }
 }
 
-.case-cocher {
+.case-cocher, .cases-score, .case-score-final {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,4 +118,47 @@
 }
 .last-dice-violet {
     background-color: $color-violet;
+}
+
+.line-score {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: #9e9d9d;
+}
+
+.cases-score {
+    height: 48px;
+    width: 48px;
+    margin: 0px 8px;
+}
+
+.score-orange {
+    background: #edc188;
+}
+
+.score-jaune {
+    background: #ede888;
+}
+
+.score-violet {
+    background: #ba88ed;
+}
+
+.score-blanc {
+    background-color: $color-carte;
+}
+
+.cases-score-losange {
+    clip-path: polygon(50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
+    background-color: $color-carte;
+}
+
+.case-score-final {
+    height: 48px;
+    width: 80px;
+    margin: 0px 8px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: $color-carte;
 }

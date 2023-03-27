@@ -1,47 +1,44 @@
-import React, { useState } from "react";
+import { useGlobalContext } from "../Context";
 
 const LineCoupsManques = () => {
-    const [coupsRates, setCoupsRates] = useState(1);
 
-    const incrementeCoupRate = (nbr) => {
-        setCoupsRates(nbr += 1)
-        coupsRates === 4 && alert("GAME OVER")
-    }
-
+     // CONTEXT
+     const { setCoupsRates } = useGlobalContext();
     return (
-        <>
+        <div className="coup-manques">
             <h2>Coups ratés</h2>
             <div className="line-rates">
                 <div
                     className="case-ratee"
                     onClick={(e) => {
-                        incrementeCoupRate(coupsRates)
+                        setCoupsRates(1);
                         e.target.innerText = "X";
                     }}
                 ></div>
                 <div
                     className="case-ratee"
                     onClick={(e) => {
-                        incrementeCoupRate(coupsRates)
+                        setCoupsRates(2);
                         e.target.innerText = "X";
                     }}
                 ></div>
                 <div
                     className="case-ratee"
                     onClick={(e) => {
-                        incrementeCoupRate(coupsRates)
+                        setCoupsRates(3);
                         e.target.innerText = "X";
                     }}
                 ></div>
                 <div
                     className="case-ratee"
                     onClick={(e) => {
-                        incrementeCoupRate(coupsRates)
+                        setCoupsRates(4);
                         e.target.innerText = "X";
+                        alert("GAME OVER");
                     }}
                 ></div>
             </div>
-        </>
+        </div>
     );
 };
 

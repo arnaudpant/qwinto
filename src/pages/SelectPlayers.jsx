@@ -50,7 +50,7 @@ const SelectPlayers = () => {
 
     return (
         <div className="carte-select-players">
-            <h1>QWINTO</h1>
+            <h1>Q<span>WIN</span>TO</h1>
             {players.length < 2 ? (
                 <form onSubmit={(e) => handleSubmit(e)} ref={formPlayers}>
                     <div className="form-grid">
@@ -170,6 +170,7 @@ const SelectPlayers = () => {
                     </div>
                 </>
             )}
+            <p className="copyright">Codé par Arnaud P. - Tous droits reservés</p>
         </div>
     );
 };
