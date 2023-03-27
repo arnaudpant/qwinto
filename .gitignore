@@ -1,1 +1,9 @@
 node_modules
+public
+src
+style
+utils
+.gitignore
+index.html
+Notes.md
+vite.config.js
