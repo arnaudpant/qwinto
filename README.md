@@ -11,3 +11,17 @@ Dès qu'un joueur a complété deux rangées, la partie prend fin et on procède
 ## Lien: 
 https://qwinto.netlify.app
 
+## Comment jouer:
+
+2 joueurs minimum obligatoirement !
+
+Le joueur a qui est le tour:
+- Choisi le ou les couleurs de dés puis clic sur Lancer.
+- Il annonce aux autres joueurs la somme des dés et les couleurs choisies
+- Il choisi dans la grille en fonction des couleurs de dés choisis, la case a remplir avec la somme des dés
+
+Les autres joueurs:
+- Ils cliquent sur les couleurs choisies par le joueurs actif
+- Sur le bandeau ils cliquent sur le dés noir correspondant a la somme indiquée par le joueur qui a lancé les dés.
+- S'ils souhaitent il peuvent ajouter cette somme dans la ou les lignes correspondantes aux couleurs choisies
+- Ils cliquent sur valider
