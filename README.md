@@ -16,7 +16,7 @@ https://qwinto.netlify.app
 2 joueurs minimum obligatoirement !
 
 Le joueur a qui est le tour:
-- Choisi le ou les couleurs de dés puis clic sur Lancer.
+- Choisi la ou les couleurs de dés, puis clic sur Lancer.
 - Il annonce aux autres joueurs la somme des dés et les couleurs choisies
 - Il choisi dans la grille en fonction des couleurs de dés choisis, la case a remplir avec la somme des dés
 
